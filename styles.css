@@ -104,6 +104,31 @@ h1 {
 }
 
 /* Descripción */
+.descripcion {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra horizontalmente todos los elementos hijos */
+  text-align: center; /* Centra el texto */
+  padding: 2rem;
+}
+
+.descripcion img {
+  height: 250px;
+  width: 250px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-top: 1rem; /* Espacio opcional entre párrafo e imagen */
+}
+
+.centered-image {
+  display: block; /* Las imágenes son inline por defecto */
+  margin: 0 auto; /* Centra horizontalmente */
+  height: 250px;
+  width: 250px;
+  border-radius: 10px;
+  object-fit: cover; /* Asegura que la imagen mantenga sus proporciones */
+}
+
 .descripcion, .info-extra {
   text-align: center;
 }
@@ -404,4 +429,151 @@ section.visible {
 .header-scroll .btn {
   padding: 0.5rem 1rem;
   font-size: 0.8rem;
+}
+
+/* Tecnología Eco-Friendly */
+.tecnologia {
+  text-align: center; /* Centra el texto de todos los elementos hijos */
+  padding: 2rem 1rem;
+}
+
+.tech-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centra las cards horizontalmente */
+  gap: 2rem; /* Espacio entre cards */
+  margin-top: 2rem;
+}
+
+.tech-card {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 300px; /* Ancho máximo para cada card */
+  text-align: center; /* Centra el contenido dentro de cada card */
+  transition: transform 0.3s ease;
+}
+
+.tech-card:hover {
+  transform: translateY(-5px);
+}
+
+.tech-icon {
+  margin: 0 auto 1rem; /* Centra el icono horizontalmente */
+}
+
+/* Especificaciones Técnicas - Estilo Mejorado */
+.especificaciones {
+  background-color: #f8f9fa;
+  padding: 4rem 1rem;
+  position: relative;
+  overflow: hidden;
+  z-index: 1; /* Asegura que el contenido esté por encima de los pseudo-elementos */
+}
+
+.specs-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2; /* Contenedor principal por encima de los fondos */
+}
+
+.specs-title {
+  font-size: 2.2rem;
+  color: #2c3e50;
+  margin-bottom: 3rem;
+  text-align: center;
+  position: relative;
+}
+
+.specs-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(to right, #4a00e0, #8e2de2);
+  border-radius: 3px;
+}
+
+.specs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  position: relative;
+  z-index: 2; /* Grid por encima de los fondos */
+}
+
+.spec-item {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  text-align: center;
+  border-top: 4px solid #4a00e0;
+  position: relative;
+  overflow: hidden;
+}
+
+.spec-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.spec-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.spec-item-title {
+  color: #2c3e50;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.spec-item-value {
+  color: #7f8c8d;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* Efectos de fondo - ajustados para evitar superposición */
+.especificaciones::before,
+.especificaciones::after {
+  content: '';
+  position: absolute;
+  opacity: 0.15;
+  z-index: 0; /* Fondo detrás del contenido */
+  pointer-events: none; /* Permite interacción con elementos debajo */
+}
+
+.especificaciones::before {
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(138, 43, 226, 0.3) 0%, rgba(0,0,0,0) 70%);
+}
+
+.especificaciones::after {
+  bottom: -30px;
+  left: -30px;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(74, 0, 224, 0.3) 0%, rgba(0,0,0,0) 70%);
+}
+
+@media (max-width: 768px) {
+  .specs-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .specs-title {
+    font-size: 1.8rem;
+  }
 }
